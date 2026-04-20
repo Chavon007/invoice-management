@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 // status Badge
 export type statusBadgeProps = { status: "Paid" | "Pending" | "Draft" };
 
@@ -19,4 +21,12 @@ export interface filterState {
 
 export interface filterStatusProps {
   onFilterStatus: () => void;
+}
+
+export interface invoiceCardList {
+  id: string;
+  name: string;
+  maindate: string;
+  amount: number;
+  status: "Paid" | "Pending" | "Draft";
 }
