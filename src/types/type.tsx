@@ -28,5 +28,42 @@ export interface invoiceCardList {
   name: string;
   maindate: string;
   amount: number;
-  status: "Paid" | "Pending" | "Draft";
+  status: "paid" | "pending" | "draft";
+}
+
+export interface Invoice {
+  id: string;
+  senderAddress: {
+    street: string;
+    city: string;
+    postCard: string;
+    country: string;
+  };
+  name: string;
+  receiverEmail: string;
+  receiverAddress: {
+    street: string;
+    city: string;
+    postCard: string;
+    country: string;
+  };
+  invoiceDate: string;
+  paymentTerms: string;
+  projectDesc: string;
+  total: number;
+  status: "paid" | "pending" | "draft";
+  itemList: {
+    itemName: string;
+    qty: number;
+    price: number;
+    total: number;
+  }[];
+}
+
+export interface InvoiceContextType {
+  invoices: Invoice[];
+  addInvoice: (invoice: Invoice) => void;
+  updateInvoice: (invoice: Invoice) => void;
+  deleteInvoice: (id: string) => void;
+  markAsPaid: (id: string) => void;
 }
