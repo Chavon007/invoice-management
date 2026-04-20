@@ -1,0 +1,22 @@
+.status-bage {
+  width: 104px;
+  height: 40px;
+  margin-top: 16px;
+  margin-left: 578px;
+  border-radius: 6px;
+  transform: rotate(0deg);
+  opacity: 5.71%;
+}
+
+.status-bage.Paid {
+  background: var(--color-bg-paid);
+  color: var(--color-bg-paid);
+}
+.status-bage.Pending {
+  background: var(--color-bg-pending);
+  color: var(--color-bg-pending);
+}
+.status-bage.Draft {
+  background: var(--color-bg-draft-btn);
+  color: var(--color-bg-draft-btn);
+}
