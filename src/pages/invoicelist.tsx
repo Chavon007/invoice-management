@@ -4,9 +4,11 @@ import NewInvoice from "../components/button/newInvoiceButton";
 import { InvoiceCardList } from "../components/invoicecardlist/invoicecardlist";
 import { SideBar } from "../components/sidebar/sidebar";
 import EmptyInvoice from "../components/emptyinvoice/emptyinvoice";
+import { useState } from "react";
+
 export function InvoiceList() {
   const { invoices } = useInvoice();
-
+  const [showForm, setShowForm] = useState(false);
   return (
     <div className="invoice-list">
       <section className="invoice-list__sidebar">
@@ -24,7 +26,10 @@ export function InvoiceList() {
               <FilterStatus />
             </div>
             <div className="invoice-list__new">
-              <NewInvoice onClick={() => {}} />
+              <NewInvoice onClick={() => setShowForm(true)} />
+              {showForm && (
+                <InvoiceForm mode="create" onClose={() => setShowForm(false)} />
+              )}
             </div>
           </div>
         </section>

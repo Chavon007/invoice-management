@@ -5,10 +5,14 @@ import MarkAsPaid from "../components/button/paidButton";
 import { Link, useParams } from "react-router-dom";
 import { StatusBadge } from "../components/StatusBadge/statusBadge";
 import { IoIosArrowBack } from "react-icons/io";
+import { useState } from "react";
+import InvoiceForm from "../components/invoiceForm/invoiceForm";
 
 export function InvoiceDetails() {
   const { invoices } = useInvoice();
   const { id } = useParams();
+  const [showForm, setShowForm] = useState(false);
+
   const invoice = invoices.find((inv) => inv.id === id);
 
   if (!invoice) return <p>Invoice not found</p>;
@@ -29,7 +33,14 @@ export function InvoiceDetails() {
           <StatusBadge status={invoice.status} />
         </div>
         <div className="invoice-details__actions">
-          <EditBtn onClick={() => {}} />
+          <EditBtn onClick={() => setShowForm(true)} />
+          {showForm && (
+            <InvoiceForm
+              mode="edit"
+              invoice={invoice}
+              onClose={() => setShowForm(false)}
+            />
+          )}
           <DeleteBtn onClick={() => {}} />
           <MarkAsPaid onClick={() => {}} />
         </div>
@@ -37,7 +48,6 @@ export function InvoiceDetails() {
 
       <section className="invoice-details__body">
         <div className="invoice-details__card">
-
           <div className="invoice-details__top">
             {/* id & job */}
             <div className="invoice-details__id-block">
@@ -58,11 +68,15 @@ export function InvoiceDetails() {
             <div className="invoice-details__dates">
               <div className="invoice-details__date-block">
                 <p className="invoice-details__label">Invoice Date</p>
-                <h5 className="invoice-details__value">{invoice.invoiceDate}</h5>
+                <h5 className="invoice-details__value">
+                  {invoice.invoiceDate}
+                </h5>
               </div>
               <div className="invoice-details__date-block">
                 <p className="invoice-details__label">Payment Due</p>
-                <h5 className="invoice-details__value">{invoice.paymentTerms}</h5>
+                <h5 className="invoice-details__value">
+                  {invoice.paymentTerms}
+                </h5>
               </div>
             </div>
 
@@ -79,7 +93,9 @@ export function InvoiceDetails() {
             {/* sent to */}
             <div className="invoice-details__sent-to">
               <p className="invoice-details__label">Sent to</p>
-              <h5 className="invoice-details__value">{invoice.receiverEmail}</h5>
+              <h5 className="invoice-details__value">
+                {invoice.receiverEmail}
+              </h5>
             </div>
           </div>
 
@@ -111,7 +127,6 @@ export function InvoiceDetails() {
               <p className="invoice-details__total-amount">£{invoice.total}</p>
             </section>
           </div>
-
         </div>
       </section>
     </div>

@@ -1,5 +1,3 @@
-
-
 // status Badge
 export type statusBadgeProps = { status: "paid" | "pending" | "draft" };
 
@@ -66,4 +64,17 @@ export interface InvoiceContextType {
   updateInvoice: (invoice: Invoice) => void;
   deleteInvoice: (id: string) => void;
   markAsPaid: (id: string) => void;
+}
+
+export interface InvoiceItem {
+  itemName: string;
+  qty: number;
+  price: number;
+  total: number;
+}
+
+export interface InvoiceFormProps {
+  mode: "create" | "edit";
+  invoice?: Invoice;
+  onClose: () => void;
 }
