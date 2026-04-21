@@ -8,7 +8,9 @@ import { InvoiceProvider } from "./context/invoiceContext.tsx";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider>
-      <App />
+      <InvoiceProvider>
+        <App />
+      </InvoiceProvider>
     </ThemeProvider>
   </StrictMode>,
 );
