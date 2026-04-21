@@ -1,7 +1,7 @@
 import dark from "../../assets/Path.png";
 import light from "../../assets/light.png";
 import profilePic from "../../assets/profilepic.png";
-import logo from "../..//assets/Oval.png";
+import logo from "../..//assets/logo11.png";
 import { useTheme } from "../../context/themeContext";
 import "./sidebar.css"
 

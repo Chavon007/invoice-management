@@ -1,7 +1,7 @@
-import type { ReactNode } from "react";
+
 
 // status Badge
-export type statusBadgeProps = { status: "Paid" | "Pending" | "Draft" };
+export type statusBadgeProps = { status: "paid" | "pending" | "draft" };
 
 export interface buttonProps {
   onClick: () => void;

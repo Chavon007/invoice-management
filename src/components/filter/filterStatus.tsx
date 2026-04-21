@@ -1,7 +1,7 @@
 import type { filterState } from "../../types/type";
 import { useState } from "react";
 import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
-import "./filterStatus.css";
+// import "./filterStatus.css";
 
 export function FilterStatus() {
   const [filter, setFilter] = useState<filterState>({
