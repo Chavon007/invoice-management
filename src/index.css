@@ -6,6 +6,12 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 .invoice-list {
   width: 100%;
   min-height: 105vh;
@@ -487,4 +493,5 @@
 }
 
 /* ===== DESKTOP ===== */
-@media (min-width: 1024px) {}
+@media (min-width: 1024px) {
+}
