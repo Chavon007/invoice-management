@@ -1,6 +1,6 @@
 import type { Invoice, InvoiceContextType } from "../types/type";
 import { useState, createContext, useContext, useEffect } from "react";
-
+import { seedInvoices } from "../data/data";
 const InvoiceContext = createContext<InvoiceContextType | null>(null);
 
 export const InvoiceProvider = ({
@@ -10,7 +10,7 @@ export const InvoiceProvider = ({
 }) => {
   const [invoices, setInvoices] = useState<Invoice[]>(() => {
     const stored = localStorage.getItem("invoices");
-    return stored ? JSON.parse(stored) : [];
+    return stored ? JSON.parse(stored) : seedInvoices;
   });
 
   useEffect(() => {
