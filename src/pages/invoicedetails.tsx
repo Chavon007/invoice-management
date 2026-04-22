@@ -8,9 +8,9 @@ import { IoIosArrowBack } from "react-icons/io";
 import { useState } from "react";
 import InvoiceForm from "../components/invoiceForm/invoiceForm";
 import { DeleteModal } from "../components/deleteModal/deletemodal";
-
 import { SideBar } from "../components/sidebar/sidebar";
 import { useNavigate } from "react-router-dom";
+
 export function InvoiceDetails() {
   const navigate = useNavigate();
   const { invoices, markAsPaid, deleteInvoice } = useInvoice();
@@ -27,7 +27,7 @@ export function InvoiceDetails() {
       <section className="invoice-list__sidebar">
         <SideBar />
       </section>
-      {/* back home */}
+
       <div className="invoice-list__content">
         <section className="invoice-details__back">
           <Link to="/" className="invoice-details__back-link">
@@ -53,7 +53,6 @@ export function InvoiceDetails() {
               />
             )}
             <DeleteBtn onClick={() => setShowModal(true)} />
-
             {showModal && (
               <DeleteModal
                 invoiceId={invoice.id}
@@ -80,12 +79,10 @@ export function InvoiceDetails() {
         <section className="invoice-details__body">
           <div className="invoice-details__card">
             <div className="invoice-details__top">
-              {/* id & job */}
               <div className="invoice-details__id-block">
                 <h6 className="invoice-details__id">#{invoice.id}</h6>
                 <p className="invoice-details__desc">{invoice.projectDesc}</p>
               </div>
-              {/* sender address */}
               <div className="invoice-details__sender">
                 <p>{invoice.senderAddress.street}</p>
                 <p>{invoice.senderAddress.city}</p>
@@ -95,23 +92,17 @@ export function InvoiceDetails() {
             </div>
 
             <div className="invoice-details__meta">
-              {/* dates */}
               <div className="invoice-details__dates">
                 <div className="invoice-details__date-block">
                   <p className="invoice-details__label">Invoice Date</p>
-                  <h5 className="invoice-details__value">
-                    {invoice.invoiceDate}
-                  </h5>
+                  <h5 className="invoice-details__value">{invoice.invoiceDate}</h5>
                 </div>
                 <div className="invoice-details__date-block">
                   <p className="invoice-details__label">Payment Due</p>
-                  <h5 className="invoice-details__value">
-                    {invoice.paymentTerms}
-                  </h5>
+                  <h5 className="invoice-details__value">{invoice.paymentTerms}</h5>
                 </div>
               </div>
 
-              {/* bill to */}
               <div className="invoice-details__bill-to">
                 <p className="invoice-details__label">Bill To</p>
                 <h5 className="invoice-details__value">{invoice.name}</h5>
@@ -121,12 +112,9 @@ export function InvoiceDetails() {
                 <p>{invoice.receiverAddress.country}</p>
               </div>
 
-              {/* sent to */}
               <div className="invoice-details__sent-to">
                 <p className="invoice-details__label">Sent to</p>
-                <h5 className="invoice-details__value">
-                  {invoice.receiverEmail}
-                </h5>
+                <h5 className="invoice-details__value">{invoice.receiverEmail}</h5>
               </div>
             </div>
 
@@ -145,16 +133,18 @@ export function InvoiceDetails() {
                 <tbody className="invoice-details__table-body">
                   {invoice.itemList.map((item, index) => (
                     <tr key={index} className="invoice-details__table-row">
+                      {/* first cell: name always visible, meta only on mobile */}
                       <td className="item-info">
-                        <div className="item-name">{item.itemName}</div>
-
+                        <span className="item-name">{item.itemName}</span>
                         <div className="item-meta">
                           <span>{item.qty}</span>
                           <span>x</span>
                           <span>£{item.price}</span>
                         </div>
                       </td>
-
+                      {/* these cells show on desktop, hidden on mobile */}
+                      <td className="item-qty">{item.qty}</td>
+                      <td className="item-price">£{item.price}</td>
                       <td className="item-total">£{item.total}</td>
                     </tr>
                   ))}
@@ -163,9 +153,7 @@ export function InvoiceDetails() {
 
               <section className="invoice-details__total">
                 <h5 className="invoice-details__total-label">Grand Total</h5>
-                <p className="invoice-details__total-amount">
-                  £{invoice.total}
-                </p>
+                <p className="invoice-details__total-amount">£{invoice.total}</p>
               </section>
             </div>
           </div>
@@ -184,7 +172,6 @@ export function InvoiceDetails() {
               />
             )}
             <DeleteBtn onClick={() => setShowModal(true)} />
-
             {showModal && (
               <DeleteModal
                 invoiceId={invoice.id}

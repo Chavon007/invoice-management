@@ -11,7 +11,6 @@
   min-height: 105vh;
   background: var(--color-bg);
   display: flex;
-  /* padding-bottom: 5px; */
 }
 
 .invoice-detail {
@@ -20,6 +19,7 @@
   background: var(--color-bg);
   display: flex;
 }
+
 .invoice-list__content {
   flex: 1;
   max-width: 730px;
@@ -32,22 +32,26 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .invoice-count--mobile {
   display: none;
 }
+
 .invoice-list__title {
   width: 135px;
   height: 54px;
 }
+
 .invoice-list__title h2 {
   width: 119px;
   height: 33px;
-  color: #0c0e16;
+  color: var(--color-text-primary);
   font-family: var(--font-primary);
   font-size: var(--text-heading-l);
   font-weight: var(--weight-bold);
   letter-spacing: -1.13px;
 }
+
 .invoice-list__title p {
   margin: 1px;
   width: 145px;
@@ -59,6 +63,7 @@
   line-height: var(--leading-heading-sv);
   letter-spacing: var(--tracking-body);
 }
+
 .invoice-list__actions {
   display: flex;
   justify-content: space-between;
@@ -84,7 +89,6 @@
   margin: 0 auto;
 }
 
-/* Back link */
 .invoice-details__back {
   margin-bottom: 32px;
 }
@@ -102,24 +106,23 @@
 }
 
 .invoice-details__back-link:hover {
-  color: #888eb0;
+  color: var(--color-text-secondary);
 }
 
 .invoice-details__back-link svg {
-  color: #7c5dfa;
+  color: var(--color-bg-btn-default);
   font-size: 12px;
 }
 
-/* Status bar */
 .invoice-details__status-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #ffffff;
+  background: var(--color-bg-status-bar);
   border-radius: 8px;
   padding: 20px 24px;
   margin-bottom: 24px;
-  box-shadow: 0 10px 10px -10px rgba(72, 84, 159, 0.1);
+  box-shadow: var(--shadow-card);
 }
 
 .invoice-details__status-bar1 {
@@ -132,6 +135,7 @@
   gap: 16px;
   width: 159px;
 }
+
 .invoice-details__status-bar__mobile {
   display: none;
 }
@@ -140,7 +144,7 @@
   font-family: var(--font-primary);
   font-size: 13px;
   font-weight: var(--weight-medium);
-  color: #888eb0;
+  color: var(--color-text-secondary);
 }
 
 .invoice-details__actions {
@@ -149,19 +153,17 @@
   gap: 8px;
 }
 
-/* Main card */
 .invoice-details__card {
-  background: #ffffff;
+  background: var(--color-bg-status-bar);
   border-radius: 8px;
   padding: 48px 48px 20px 48px;
   margin-bottom: 30px;
-  box-shadow: 0 10px 10px -10px rgba(72, 84, 159, 0.1);
+  box-shadow: var(--shadow-card);
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
 
-/* Top section — id/desc + sender address */
 .invoice-details__top {
   display: flex;
   justify-content: space-between;
@@ -178,14 +180,14 @@
 
 .invoice-details__id::before {
   content: "#";
-  color: #7e88c3;
+  color: var(--color-text-muted);
 }
 
 .invoice-details__desc {
   font-family: var(--font-primary);
   font-size: 13px;
   font-weight: var(--weight-medium);
-  color: #888eb0;
+  color: var(--color-text-secondary);
   margin-top: 4px;
 }
 
@@ -194,11 +196,10 @@
   font-family: var(--font-primary);
   font-size: 11px;
   font-weight: var(--weight-medium);
-  color: #888eb0;
+  color: var(--color-text-secondary);
   line-height: 18px;
 }
 
-/* Meta section — dates, bill to, sent to */
 .invoice-details__meta {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -215,7 +216,7 @@
   font-family: var(--font-primary);
   font-size: 13px;
   font-weight: var(--weight-medium);
-  color: #888eb0;
+  color: var(--color-text-secondary);
   margin-bottom: 8px;
 }
 
@@ -232,13 +233,12 @@
   font-family: var(--font-primary);
   font-size: 11px;
   font-weight: var(--weight-medium);
-  color: #888eb0;
+  color: var(--color-text-secondary);
   line-height: 18px;
 }
 
-/* Items table */
 .invoice-details__items {
-  background: #f9fafe;
+  background: var(--color-bg-table);
   border-radius: 8px 8px 0 0;
   overflow: hidden;
 }
@@ -257,7 +257,7 @@
   font-family: var(--font-primary);
   font-size: 11px;
   font-weight: var(--weight-medium);
-  color: #888eb0;
+  color: var(--color-text-secondary);
   padding: 16px 32px;
   text-align: left;
 }
@@ -275,9 +275,26 @@
   padding: 15px 32px;
 }
 
-/* Amount due */
+/* desktop: hide the mobile-only meta, show individual td columns */
+.item-meta {
+  display: none;
+}
+
+.item-qty,
+.item-price,
+.item-total {
+  display: table-cell;
+}
+
+.item-name {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-bold);
+  font-size: 13px;
+  color: var(--color-text-primary);
+}
+
 .invoice-details__total {
-  background: #373b53;
+  background: var(--color-bg-total);
   border-radius: 0 0 8px 8px;
   padding: 24px 32px;
   display: flex;
@@ -289,18 +306,18 @@
   font-family: var(--font-primary);
   font-size: 13px;
   font-weight: var(--weight-medium);
-  color: #ffffff;
+  color: var(--color-text-total);
 }
 
 .invoice-details__total-amount {
   font-family: var(--font-primary);
   font-weight: var(--weight-bold);
   font-size: 24px;
-  color: #ffffff;
+  color: var(--color-text-total);
   letter-spacing: -0.5px;
 }
 
-/* ===== MOBILE (320px+) ===== */
+/* ===== MOBILE ===== */
 @media (max-width: 767px) {
   .invoice-list,
   .invoice-detail {
@@ -308,13 +325,16 @@
     flex-direction: column;
     height: fit-content;
   }
+
   .invoice-list__content {
     max-width: 400px;
   }
+
   .invoice-list__title h2 {
     width: 78px;
     font-size: 24px;
   }
+
   .invoice-list__title p {
     margin-top: -3px;
   }
@@ -326,27 +346,31 @@
   .invoice-count--mobile {
     display: block;
   }
+
   .invoice-list__cards {
     width: 327px;
   }
+
   .invoice-details__status-bar__mobile {
     display: flex;
     width: 330px;
     justify-content: space-between;
     align-items: center;
-    background: #ffffff;
+    background: var(--color-bg-status-bar);
     border-radius: 8px;
     padding: 20px 24px;
     margin-bottom: 24px;
-    box-shadow: 0 10px 10px -10px rgba(72, 84, 159, 0.1);
+    box-shadow: var(--shadow-card);
   }
+
   .invoice-details__status-bar {
     display: none;
   }
 
-  .invoice-details__card{
+  .invoice-details__card {
     width: 330px;
   }
+
   .invoice-details__top {
     width: 200px;
     margin-left: -35px;
@@ -355,15 +379,17 @@
     flex-direction: column;
     gap: 30px;
   }
+
   .invoice-details__status-bar1 {
     display: block;
     width: 330px;
-    background: #ffffff;
+    background: var(--color-bg-status-bar);
     border-radius: 8px;
     padding: 20px 24px;
     margin-bottom: 24px;
-    box-shadow: 0 10px 10px -10px rgba(72, 84, 159, 0.1);
+    box-shadow: var(--shadow-card);
   }
+
   .invoice-details__status-bar1 .invoice-details__status {
     display: flex;
     justify-content: space-between;
@@ -371,6 +397,7 @@
     width: 100%;
     padding: 1px;
   }
+
   .invoice-details__sender {
     align-items: flex-start;
     text-align: left;
@@ -381,12 +408,10 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
+
   .invoice-details__items {
     width: 300px;
     margin-left: -35px;
-  }
-  .invoice-details__table-head {
-    display: none;
   }
 
   .invoice-details__table-head {
@@ -400,6 +425,7 @@
     padding: 12px 0;
   }
 
+  /* on mobile first td takes left side, last td takes right side */
   .item-info {
     display: flex;
     flex-direction: column;
@@ -407,16 +433,24 @@
   }
 
   .item-name {
-    font-weight: 600;
-    color: #0c0e16;
+    font-weight: 700;
+    color: var(--color-text-primary);
   }
 
+  /* show meta (qty x price) on mobile */
   .item-meta {
     display: flex;
     gap: 6px;
     font-size: 12px;
-    color: #888eb0;
+    font-weight: var(--weight-medium);
+    color: var(--color-text-secondary);
     margin-top: 4px;
+  }
+
+  /* hide the individual qty and price tds on mobile */
+  .item-qty,
+  .item-price {
+    display: none;
   }
 
   .item-total {
@@ -425,7 +459,7 @@
   }
 }
 
-/* ===== TABLET (768px+) ===== */
+/* ===== TABLET ===== */
 @media (min-width: 768px) and (max-width: 1023px) {
   .invoice-list,
   .invoice-detail {
@@ -433,21 +467,24 @@
     flex-direction: column;
     height: fit-content;
   }
+
   .invoice-list__content {
     max-width: 950px;
   }
+
   .invoice-list__title h2 {
     width: 78px;
     font-size: 24px;
   }
+
   .invoice-list__title p {
     margin-top: -3px;
   }
+
   .invoice-details__body {
     width: 700px;
   }
 }
 
-/* ===== DESKTOP (1024px+) ===== */
-@media (min-width: 1024px) {
-}
+/* ===== DESKTOP ===== */
+@media (min-width: 1024px) {}

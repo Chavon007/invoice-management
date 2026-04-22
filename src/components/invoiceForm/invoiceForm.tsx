@@ -562,7 +562,6 @@ function InvoiceForm({ mode, invoice, onClose }: InvoiceFormProps) {
                     }
                   />
                 </label>
-
                 <label className="invoice-form__label">
                   Price
                   <input
@@ -577,7 +576,6 @@ function InvoiceForm({ mode, invoice, onClose }: InvoiceFormProps) {
                     }
                   />
                 </label>
-
                 <label className="invoice-form__label">
                   Total
                   <input
@@ -587,6 +585,8 @@ function InvoiceForm({ mode, invoice, onClose }: InvoiceFormProps) {
                     readOnly
                   />
                 </label>
+                <div />{" "}
+                {/* placeholder to fill the 5th grid column (delete icon space) */}
               </div>
             </div>
 

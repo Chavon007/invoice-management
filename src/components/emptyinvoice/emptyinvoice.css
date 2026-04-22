@@ -14,24 +14,25 @@
   text-align: center;
   width: 242px;
 }
+
 .empty__title {
   margin-top: 50px;
   font-family: var(--font-primary);
   font-weight: var(--weight-bold);
-  font-size: 24px;
-  letter-spacing: -0.75px;
+  font-size: var(--text-heading-m);
+  letter-spacing: var(--tracking-heading-m);
   padding: 1px;
 }
 
 .empty__text {
   max-width: 193px;
-  font-size: 13px;
+  font-size: var(--text-body);
   font-family: var(--font-primary);
   font-weight: var(--weight-medium);
-  color: #888eb0;
+  color: var(--color-text-secondary);
   text-align: center;
-  line-height: 15px;
-  letter-spacing: -0.1px;
+  line-height: var(--leading-body-v);
+  letter-spacing: var(--tracking-body);
   margin-top: 5px;
 }
 

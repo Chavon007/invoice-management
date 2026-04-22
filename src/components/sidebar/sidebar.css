@@ -3,9 +3,9 @@
   flex-direction: column;
   background: var(--color-bg-sidebar);
   justify-content: space-between;
-  height: 100vh;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  height: 120vh;
+  border-top-right-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
 }
 
 .sidebar__logo {
@@ -16,8 +16,8 @@
     var(--color-bg-btn-default) 50%,
     var(--color-bg-btn-default-hover) 50%
   );
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-top-right-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,13 +53,13 @@
 .sidebar__divider {
   width: 103px;
   height: 1px;
-  background-color: #494e6e;
+  background-color: var(--color-border);
 }
 
 .sidebar__avatar img {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   object-fit: cover;
   display: block;
 }
@@ -79,8 +79,8 @@
     width: 72px;
     height: 72px;
     border-radius: 0;
-    border-bottom-right-radius: 20px;
-    border-top-right-radius: 20px;
+    border-bottom-right-radius: var(--radius-lg);
+    border-top-right-radius: var(--radius-lg);
   }
 
   .sidebar__bottom {
@@ -115,8 +115,8 @@
     width: 72px;
     height: 72px;
     border-radius: 0;
-    border-bottom-right-radius: 20px;
-    border-top-right-radius: 20px;
+    border-bottom-right-radius: var(--radius-lg);
+    border-top-right-radius: var(--radius-lg);
   }
 
   .sidebar__bottom {
@@ -143,16 +143,16 @@
     height: 100vh;
     width: 103px;
     border-radius: 0;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-top-right-radius: var(--radius-lg);
+    border-bottom-right-radius: var(--radius-lg);
   }
 
   .sidebar__logo {
     width: 103px;
     height: 103px;
     border-radius: 0;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-top-right-radius: var(--radius-lg);
+    border-bottom-right-radius: var(--radius-lg);
   }
 
   .sidebar__bottom {

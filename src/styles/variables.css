@@ -3,8 +3,8 @@
 :root[data-theme="light"] {
   /* Backgrounds */
   --color-bg: #f8f8fb;
-  --color-bg-card:         ;
-  --color-bg-input:        ;
+  --color-bg-card: #ffffff;
+  --color-bg-input: #ffffff;
   --color-bg-sidebar: #373b53;
   --color-bg-edit-btn: #f9fafe;
   --color-bg-edit-btn-hover: #dfe3fa;
@@ -12,27 +12,43 @@
   --color-bg-draft-btn-hover: #0c0e16;
   --color-bg-btn-add: #f9fafe;
   --color-bg-btn-add-hover: #dfe3fa;
+  --color-bg-table: #f9fafe;
+  --color-bg-total: #373b53;
+  --color-bg-status-bar: #ffffff;
 
   /* Text */
   --color-text-primary: #0c0e16;
   --color-text-secondary: #888eb0;
-  --color-text-muted:      ;
+  --color-text-muted: #7e88c3;
   --color-text-draft: #373b53;
+  --color-text-total: #ffffff;
 
   /* Borders */
-  --color-border:          ;
-  --color-border-input:    ;
-  --color-border-focus:    ;
+  --color-border: #dfe3fa;
+  --color-border-input: #dfe3fa;
+  --color-border-focus: #7c5dfa;
 
   /* Buttons */
   --color-edit-btn-text: #7e88c3;
+
+  /* Checkbox */
+  --color-checkbox-bg: #dfe3fa;
+  --color-checkbox-border: #dfe3fa;
+
+  /* Shadows */
+  --shadow-card: 0 10px 10px -10px rgba(72, 84, 159, 0.1);
+  --shadow-dropdown: 0px 10px 20px rgba(72, 84, 159, 0.25);
+
+  /* Invoice card */
+  --color-bg-invoice-card: #ffffff;
+  --color-invoice-id: #7e88c3;
 }
 
 :root[data-theme="dark"] {
   /* Backgrounds */
   --color-bg: #141625;
-  --color-bg-card:         ;
-  --color-bg-input:        ;
+  --color-bg-card: #1e2139;
+  --color-bg-input: #1e2139;
   --color-bg-sidebar: #1e2139;
   --color-bg-edit-btn: #252945;
   --color-bg-edit-btn-hover: #ffffff;
@@ -40,25 +56,39 @@
   --color-bg-draft-btn-hover: #1e2139;
   --color-bg-btn-add: #252945;
   --color-bg-btn-add-hover: #0c0e16;
+  --color-bg-table: #252945;
+  --color-bg-total: #0c0e16;
+  --color-bg-status-bar: #1e2139;
 
   /* Text */
   --color-text-primary: #ffffff;
   --color-text-secondary: #dfe3fa;
-  --color-text-muted:      ;
-  --color-text-draft: #dfe3fa; 
+  --color-text-muted: #dfe3fa;
+  --color-text-draft: #dfe3fa;
+  --color-text-total: #ffffff;
 
   /* Borders */
-  --color-border:          ;
-  --color-border-input:    ;
-  --color-border-focus:    ;
+  --color-border: #252945;
+  --color-border-input: #252945;
+  --color-border-focus: #7c5dfa;
 
   /* Buttons */
   --color-edit-btn-text: #dfe3fa;
+
+  /* Checkbox */
+  --color-checkbox-bg: #1e2139;
+  --color-checkbox-border: #1e2139;
+
+  /* Shadows */
+  --shadow-card: 0 10px 10px -10px rgba(0, 0, 0, 0.25);
+  --shadow-dropdown: 0px 10px 20px rgba(0, 0, 0, 0.4);
+
+  /* Invoice card */
+  --color-bg-invoice-card: #1e2139;
+  --color-invoice-id: #888eb0;
 }
 
-/* 
-   SHARED — Same in both themes
-   */
+/* ===== SHARED — Same in both themes ===== */
 :root {
   /* Brand */
   --color-bg-btn-default: #7c5dfa;
@@ -68,39 +98,34 @@
   --color-bg-delete: #ec5757;
   --color-bg-delete-hover: #ff9797;
 
-  /* Status — Paid */
-  --color-bg-paid: #33d69f;
+  /* Status */
+  --color-bg-paid: rgba(51, 214, 159, 0.1);
   --color-text-paid: #33d69f;
-
-  /* Status — Pending */
-  --color-bg-pending: #ff8f00;
+  --color-bg-pending: rgba(255, 143, 0, 0.1);
   --color-text-pending: #ff8f00;
+  --color-bg-draft-badge: rgba(55, 59, 83, 0.1);
 
-  /* TYPOGRAPHY */
+  /* Typography */
   --font-primary: "League Spartan", sans-serif;
-
   --text-heading-l: 2.25rem;
   --text-heading-m: 1.5rem;
   --text-heading-s: 0.9375rem;
   --text-body: 0.8125rem;
-
   --leading-heading-l: 33px;
   --leading-heading-m: 22px;
   --leading-heading-s: 24px;
   --leading-heading-sv: 15px;
   --leading-body: 18px;
   --leading-body-v: 15px;
-
   --tracking-heading-l: -1px;
   --tracking-heading-m: -0.75px;
   --tracking-heading-s: -0.25px;
   --tracking-body: -0.1px;
   --tracking-body-v: -0.25px;
-
   --weight-medium: 500;
   --weight-bold: 700;
 
-  /* SPACING */
+  /* Spacing */
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
@@ -108,13 +133,13 @@
   --spacing-xl: 2rem;
   --spacing-2xl: 3rem;
 
-  /* BORDER RADIUS */
+  /* Border radius */
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 20px;
   --radius-full: 9999px;
 
-  /* TRANSITIONS */
+  /* Transitions */
   --transition-fast: 150ms ease;
   --transition-base: 250ms ease;
 }

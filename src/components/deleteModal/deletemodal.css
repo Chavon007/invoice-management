@@ -9,16 +9,12 @@
 }
 
 .modal {
-  background: #ffffff;
+  background: var(--color-bg-card);
   border-radius: var(--radius-md);
   padding: 48px;
   max-width: 480px;
   width: 90%;
-  box-shadow: 0 10px 10px -10px rgba(72, 84, 159, 0.1);
-}
-
-[data-theme="dark"] .modal {
-  background: #1e2139;
+  box-shadow: var(--shadow-card);
 }
 
 .modal__content {
@@ -80,17 +76,14 @@
   background: var(--color-bg-delete-hover);
 }
 
-/* ===== MOBILE (320px+) ===== */
+/* ===== MOBILE ===== */
 @media (max-width: 767px) {
-
 }
 
-/* ===== TABLET (768px+) ===== */
+/* ===== TABLET ===== */
 @media (min-width: 768px) and (max-width: 1023px) {
-
 }
 
-/* ===== DESKTOP (1024px+) ===== */
+/* ===== DESKTOP ===== */
 @media (min-width: 1024px) {
-
 }

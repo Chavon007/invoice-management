@@ -1,18 +1,15 @@
-/* Card row layout */
 .invoice-card {
   width: 100%;
-  background: #ffffff;
+  background: var(--color-bg-invoice-card);
   border-radius: 8px;
   border: 1px solid transparent;
   cursor: pointer;
-  box-shadow: #48549f1a;
+  box-shadow: var(--shadow-card);
 }
 
 .invoice-card:hover {
-  border-color: #7c5dfa;
+  border-color: var(--color-bg-btn-default);
 }
-
-/* Button inside fills the card */
 
 .invoice-card__button {
   width: 100%;
@@ -26,6 +23,7 @@
   text-align: left;
   gap: 8px;
 }
+
 .invoice-card__button_mobile {
   display: none;
 }
@@ -42,7 +40,7 @@
 
 .invoice-card__id::before {
   content: "#";
-  color: #7e88c3;
+  color: var(--color-invoice-id);
 }
 
 .invoice-card__date,
@@ -50,7 +48,7 @@
   font-family: var(--font-primary);
   font-size: 13px;
   font-weight: var(--weight-medium);
-  color: #888eb0;
+  color: var(--color-text-secondary);
   line-height: 15px;
   letter-spacing: -0.1px;
 }
@@ -61,31 +59,33 @@
   font-size: 16px;
   color: var(--color-text-primary);
 }
+
 .invoice-card__arrow {
-  color: #7c5dfa;
+  color: var(--color-bg-btn-default);
   font-size: 11px;
   justify-self: end;
 }
 
-/* ===== MOBILE (320px+) ===== */
+/* ===== MOBILE ===== */
 @media (max-width: 767px) {
   .invoice-card {
     width: 100%;
-    background: #ffffff;
+    background: var(--color-bg-invoice-card);
     border-radius: 8px;
     border: 1px solid transparent;
     cursor: pointer;
-    box-shadow: #48549f1a;
+    box-shadow: var(--shadow-card);
   }
+
   .invoice-card__button {
     display: none;
   }
+
   .invoice-card__button_mobile {
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-bottom: 10px;
-
     align-items: center;
     padding: 16px 24px;
     background: transparent;
@@ -94,11 +94,13 @@
     text-align: left;
     gap: 8px;
   }
+
   .invoice-card-1 {
     display: flex;
     flex-direction: column;
     gap: 15px;
   }
+
   .invoice-card-2 {
     display: flex;
     flex-direction: column;
@@ -108,10 +110,10 @@
   }
 }
 
-/* ===== TABLET (768px+) ===== */
+/* ===== TABLET ===== */
 @media (min-width: 768px) and (max-width: 1023px) {
 }
 
-/* ===== DESKTOP (1024px+) ===== */
+/* ===== DESKTOP ===== */
 @media (min-width: 1024px) {
 }
