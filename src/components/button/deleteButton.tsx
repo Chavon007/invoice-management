@@ -1,6 +1,6 @@
 import "./button.css";
 import type { buttonProps } from "../../types/type";
-import { useNavigate } from "react-router-dom";
+
 function DeleteBtn({ onClick }: buttonProps) {
   
   return (
