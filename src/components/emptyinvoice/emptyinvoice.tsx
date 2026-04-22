@@ -1,5 +1,5 @@
 import emailpic from "../../assets/Emailcamp.png";
-
+import "./emptyinvoice.css"
 function EmptyInvoice() {
   return (
     <div className="empty">

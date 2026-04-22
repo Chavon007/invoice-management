@@ -7,6 +7,7 @@ import EmptyInvoice from "../components/emptyinvoice/emptyinvoice";
 import { useState } from "react";
 import InvoiceForm from "../components/invoiceForm/invoiceForm";
 import type { filterState } from "../types/type";
+import "../index.css"
 
 export function InvoiceList() {
   const { invoices } = useInvoice();

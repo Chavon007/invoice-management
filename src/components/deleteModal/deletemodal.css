@@ -1,0 +1,81 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 48px;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0 10px 10px -10px rgba(72, 84, 159, 0.1);
+}
+
+[data-theme="dark"] .modal {
+  background: #1e2139;
+}
+
+.modal__content {
+  margin-bottom: 24px;
+}
+
+.modal__title {
+  font-family: var(--font-primary);
+  font-size: var(--text-heading-m);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-primary);
+  letter-spacing: var(--tracking-heading-m);
+  margin-bottom: 16px;
+}
+
+.modal__body {
+  font-family: var(--font-primary);
+  font-size: var(--text-body);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-body);
+}
+
+.modal__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.modal__btn {
+  font-family: var(--font-primary);
+  font-size: var(--text-body);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-body-v);
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 17px 24px;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.modal__btn--cancel {
+  background: var(--color-bg-edit-btn);
+  color: var(--color-edit-btn-text);
+}
+
+.modal__btn--cancel:hover {
+  background: var(--color-bg-edit-btn-hover);
+}
+
+.modal__btn--delete {
+  background: var(--color-bg-delete);
+  color: #ffffff;
+}
+
+.modal__btn--delete:hover {
+  background: var(--color-bg-delete-hover);
+}

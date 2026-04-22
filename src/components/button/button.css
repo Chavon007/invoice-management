@@ -1,0 +1,163 @@
+.btn {
+  cursor: pointer;
+}
+
+.btn.btn--new-invoice {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  gap: 16px;
+  width: 150px;
+  height: 48px;
+  padding: 8px;
+  border: none;
+  border-radius: 30px;
+  background: var(--color-bg-btn-default);
+  cursor: pointer;
+}
+.btn.btn--new-invoice:hover {
+  background: var(--color-bg-btn-default-hover);
+}
+
+.btn__text {
+  width: 80px;
+  font-family: var(--font-primary);
+  font-weight: var(--weight-bold);
+  font-size: 15px;
+  color: #ffffff;
+  padding: 1px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+}
+.btn__icon {
+  background-color: #ffffff;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+.btn.btn--add-item {
+  width: 504px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: #ffffff;
+  border-radius: 24px;
+  font-family: var(--font-primary);
+  font-weight: var(--weight-bold);
+  font-size: 15px;
+  line-height: 15px;
+  padding: 1px;
+  color: #7e88c3;
+}
+.btn.btn--add-item .btn__icon {
+  background: transparent;
+}
+.btn.btn--add-item:hover {
+  background: var(--color-bg-btn-add-hover);
+}
+.btn.btn--discard {
+  width: 96px;
+  height: 48px;
+  border-radius: 24px;
+  background: #f9fafe;
+  color: #7e88c3;
+  font-family: var(--font-primary);
+  font-weight: var(--weight-bold);
+  font-size: 15px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  padding: 1px;
+  border: none;
+}
+.btn.btn--draft {
+  width: 133px;
+  height: 48px;
+  background: #373b53;
+  font-family: var(--font-primary);
+  font-weight: var(--weight-bold);
+  font-size: 15px;
+  color: #888eb0;
+  border: none;
+  border-radius: 24px;
+  padding: 1px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+}
+.btn.btn--draft:hover {
+  background: var(--color-bg-draft-btn-hover);
+}
+
+.btn.btn--save {
+  width: 133px;
+  height: 48px;
+  background: #7c5dfa;
+  font-family: var(--font-primary);
+  font-weight: var(--weight-bold);
+  font-size: 15px;
+  color: #ffffff;
+  border: none;
+  border-radius: 24px;
+  padding: 1px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+}
+
+.btn.btn--save:hover {
+  background: #9277ff;
+}
+
+.btn--edit {
+  background: var(--color-bg-edit-btn);
+  color: var(--color-edit-btn-text);
+  border: none;
+  border-radius: 24px;
+  padding: 16px 24px;
+  font-family: var(--font-primary);
+  font-weight: var(--weight-bold);
+  font-size: 13px;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.btn--edit:hover {
+  background: var(--color-bg-edit-btn-hover);
+}
+
+.btn--delete {
+  background: var(--color-bg-delete);
+  color: #ffffff;
+  border: none;
+  border-radius: 24px;
+  padding: 16px 24px;
+  font-family: var(--font-primary);
+  font-weight: var(--weight-bold);
+  font-size: 13px;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.btn--delete:hover {
+  background: var(--color-bg-delete-hover);
+}
+
+.btn--paid {
+  background: var(--color-bg-btn-default);
+  color: #ffffff;
+  border: none;
+  border-radius: 24px;
+  padding: 16px 24px;
+  font-family: var(--font-primary);
+  font-weight: var(--weight-bold);
+  font-size: 13px;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.btn--paid:hover {
+  background: var(--color-bg-btn-default-hover);
+}

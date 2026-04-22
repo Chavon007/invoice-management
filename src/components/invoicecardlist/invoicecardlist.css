@@ -1,0 +1,65 @@
+/* Card row layout */
+.invoice-card {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  box-shadow: #48549f1a;
+}
+
+.invoice-card:hover {
+  border-color: #7c5dfa;
+}
+
+/* Button inside fills the card */
+
+.invoice-card__button {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 90px 110px 1fr 110px 110px 16px;
+  align-items: center;
+  padding: 16px 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: 8px;
+}
+
+.invoice-card__id {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-bold);
+  font-size: 15px;
+  color: var(--color-text-primary);
+  line-height: 15px;
+  padding: 1px;
+  letter-spacing: -0.25px;
+}
+
+.invoice-card__id::before {
+  content: "#";
+  color: #7e88c3;
+}
+
+.invoice-card__date,
+.invoice-card__name {
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: var(--weight-medium);
+  color: #888eb0;
+  line-height: 15px;
+  letter-spacing: -0.1px;
+}
+
+.invoice-card__amount {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-bold);
+  font-size: 16px;
+  color: var(--color-text-primary);
+}
+.invoice-card__arrow {
+  color: #7c5dfa;
+  font-size: 11px;
+  justify-self: end;
+}

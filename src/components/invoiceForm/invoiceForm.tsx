@@ -5,7 +5,7 @@ import { DraftBtn } from "../button/draftButton";
 import { SaveBtn } from "../button/saveSend";
 import { DiscardBtn } from "../button/discard";
 import { useInvoice } from "../../context/invoiceContext";
-
+import "./invoiceform.css";
 const initialErrors = {
   name: "",
   receiverEmail: "",
@@ -190,7 +190,7 @@ function InvoiceForm({ mode, invoice, onClose }: InvoiceFormProps) {
           {mode === "edit" ? `Edit #${invoice?.id}` : "New Invoice"}
         </h2>
 
-        <form className="invoice-form__body">
+        <form className="invoice-form__body" onClick={(e) => e.preventDefault()}>
           {/* Bill From */}
           <section className="invoice-form__section">
             <h4 className="invoice-form__section-title">Bill From</h4>
@@ -416,7 +416,7 @@ function InvoiceForm({ mode, invoice, onClose }: InvoiceFormProps) {
 
           {/* Invoice Details */}
           <section className="invoice-form__section">
-            <div className="invoice-form__row">
+            <div className="invoice-form__row--two">
               <label className="invoice-form__label">
                 Invoice Date
                 <input
@@ -518,22 +518,21 @@ function InvoiceForm({ mode, invoice, onClose }: InvoiceFormProps) {
 
             {/* New Item Inputs */}
             <div className="invoice-form__new-item">
-              <label className="invoice-form__label">
-                Item Name
-                <input
-                  className="invoice-form__input"
-                  type="text"
-                  value={currentItem.itemName}
-                  onChange={(e) =>
-                    setCurrentItem({
-                      ...currentItem,
-                      itemName: e.target.value,
-                    })
-                  }
-                />
-              </label>
-
-              <div className="invoice-form__row">
+              <div className="invoice-form__row-item">
+                <label className="invoice-form__label">
+                  Item Name
+                  <input
+                    className="invoice-form__input"
+                    type="text"
+                    value={currentItem.itemName}
+                    onChange={(e) =>
+                      setCurrentItem({
+                        ...currentItem,
+                        itemName: e.target.value,
+                      })
+                    }
+                  />
+                </label>
                 <label className="invoice-form__label">
                   QTY.
                   <input

@@ -1,7 +1,7 @@
 import type { filterState, filterStatusProps } from "../../types/type";
 import { useState } from "react";
 import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
-// import "./filterStatus.css";
+import "./filterStatus.css";
 
 export function FilterStatus({ onFilterStatus }: filterStatusProps) {
   const [filter, setFilter] = useState<filterState>({
@@ -37,8 +37,10 @@ export function FilterStatus({ onFilterStatus }: filterStatusProps) {
                 onFilterStatus(updated);
               }}
             />
+            <span className="filter__checkbox-custom" />
             Draft
           </label>
+
           <label className="filter__option">
             <input
               className="filter__checkbox"
@@ -50,8 +52,10 @@ export function FilterStatus({ onFilterStatus }: filterStatusProps) {
                 onFilterStatus(updated);
               }}
             />
+            <span className="filter__checkbox-custom" />
             Pending
           </label>
+
           <label className="filter__option">
             <input
               className="filter__checkbox"
@@ -63,6 +67,7 @@ export function FilterStatus({ onFilterStatus }: filterStatusProps) {
                 onFilterStatus(updated);
               }}
             />
+            <span className="filter__checkbox-custom" />
             Paid
           </label>
         </section>
