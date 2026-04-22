@@ -18,7 +18,7 @@ export interface filterState {
 }
 
 export interface filterStatusProps {
-  onFilterStatus: () => void;
+  onFilterStatus: (filter: filterState) => void;
 }
 
 export interface invoiceCardList {

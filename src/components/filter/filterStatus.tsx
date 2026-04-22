@@ -1,9 +1,9 @@
-import type { filterState } from "../../types/type";
+import type { filterState, filterStatusProps } from "../../types/type";
 import { useState } from "react";
 import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
 // import "./filterStatus.css";
 
-export function FilterStatus() {
+export function FilterStatus({ onFilterStatus }: filterStatusProps) {
   const [filter, setFilter] = useState<filterState>({
     draft: false,
     pending: false,
@@ -31,9 +31,11 @@ export function FilterStatus() {
               className="filter__checkbox"
               type="checkbox"
               checked={filter.draft}
-              onChange={(e) =>
-                setFilter({ ...filter, draft: e.target.checked })
-              }
+              onChange={(e) => {
+                const updated = { ...filter, draft: e.target.checked };
+                setFilter(updated);
+                onFilterStatus(updated);
+              }}
             />
             Draft
           </label>
@@ -42,9 +44,11 @@ export function FilterStatus() {
               className="filter__checkbox"
               type="checkbox"
               checked={filter.pending}
-              onChange={(e) =>
-                setFilter({ ...filter, pending: e.target.checked })
-              }
+              onChange={(e) => {
+                const updated = { ...filter, pending: e.target.checked };
+                setFilter(updated);
+                onFilterStatus(updated);
+              }}
             />
             Pending
           </label>
@@ -53,9 +57,11 @@ export function FilterStatus() {
               className="filter__checkbox"
               type="checkbox"
               checked={filter.paid}
-              onChange={(e) =>
-                setFilter({ ...filter, paid: e.target.checked })
-              }
+              onChange={(e) => {
+                const updated = { ...filter, paid: e.target.checked };
+                setFilter(updated);
+                onFilterStatus(updated);
+              }}
             />
             Paid
           </label>

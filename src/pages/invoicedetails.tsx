@@ -7,11 +7,13 @@ import { StatusBadge } from "../components/StatusBadge/statusBadge";
 import { IoIosArrowBack } from "react-icons/io";
 import { useState } from "react";
 import InvoiceForm from "../components/invoiceForm/invoiceForm";
+import { DeleteModal } from "../components/deleteModal/deletemodal";
 
 export function InvoiceDetails() {
-  const { invoices } = useInvoice();
+  const { invoices, markAsPaid, deleteInvoice } = useInvoice();
   const { id } = useParams();
   const [showForm, setShowForm] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const invoice = invoices.find((inv) => inv.id === id);
 
@@ -33,7 +35,9 @@ export function InvoiceDetails() {
           <StatusBadge status={invoice.status} />
         </div>
         <div className="invoice-details__actions">
-          <EditBtn onClick={() => setShowForm(true)} />
+          {invoice.status !== "paid" && (
+            <EditBtn onClick={() => setShowForm(true)} />
+          )}
           {showForm && (
             <InvoiceForm
               mode="edit"
@@ -41,8 +45,18 @@ export function InvoiceDetails() {
               onClose={() => setShowForm(false)}
             />
           )}
-          <DeleteBtn onClick={() => {}} />
-          <MarkAsPaid onClick={() => {}} />
+          <DeleteBtn onClick={() => setShowModal(true)} />
+
+          {showModal && (
+            <DeleteModal
+              invoiceId={invoice.id}
+              onConfirm={() => deleteInvoice(invoice.id)}
+              onCancel={() => setShowModal(false)}
+            />
+          )}
+          {invoice.status === "pending" && (
+            <MarkAsPaid onClick={() => markAsPaid(invoice.id)} />
+          )}
         </div>
       </section>
 

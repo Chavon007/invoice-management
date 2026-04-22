@@ -1,7 +1,7 @@
 import type { deleteProps } from "../../types/type";
 import { useEffect, useRef } from "react";
 
-const DeleteModal = ({ onCancel, onConfirm, invoiceId }: deleteProps) => {
+export const DeleteModal = ({ onCancel, onConfirm, invoiceId }: deleteProps) => {
   const modelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
