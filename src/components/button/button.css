@@ -29,6 +29,9 @@
   line-height: 15px;
   letter-spacing: -0.25px;
 }
+.btn__text__mobile {
+  display: none;
+}
 .btn__icon {
   background-color: #ffffff;
   width: 32px;
@@ -160,4 +163,37 @@
 
 .btn--paid:hover {
   background: var(--color-bg-btn-default-hover);
+}
+/* ===== MOBILE (320px+) ===== */
+@media (max-width: 767px) {
+  .btn.btn--new-invoice {
+    width: 90px;
+  }
+  .btn__text__mobile {
+    display: block;
+    width: 80px;
+    font-family: var(--font-primary);
+    font-weight: var(--weight-bold);
+    font-size: 15px;
+    color: #ffffff;
+    padding: 1px;
+    line-height: 15px;
+    letter-spacing: -0.25px;
+  }
+  .btn__icon {
+    width: 80px;
+    height: 30px;
+  }
+  .btn__text {
+    display: none;
+    /* width: 50px; */
+  }
+}
+
+/* ===== TABLET (768px+) ===== */
+@media (min-width: 768px) and (max-width: 1023px) {
+}
+
+/* ===== DESKTOP (1024px+) ===== */
+@media (min-width: 1024px) {
 }

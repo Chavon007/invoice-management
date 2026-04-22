@@ -9,6 +9,7 @@ function NewInvoice({ onClick }: buttonProps) {
         <FaPlus />
       </span>
       <span className="btn__text">New Invoice</span>
+      <span className="btn__text__mobile">New</span>
     </button>
   );
 }

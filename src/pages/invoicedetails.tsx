@@ -59,7 +59,7 @@ export function InvoiceDetails() {
                 invoiceId={invoice.id}
                 onConfirm={() => {
                   deleteInvoice(invoice.id);
-                  navigate("/"); 
+                  navigate("/");
                 }}
                 onCancel={() => setShowModal(false)}
               />
@@ -67,6 +67,13 @@ export function InvoiceDetails() {
             {invoice.status === "pending" && (
               <MarkAsPaid onClick={() => markAsPaid(invoice.id)} />
             )}
+          </div>
+        </section>
+
+        <section className="invoice-details__status-bar1">
+          <div className="invoice-details__status">
+            <h6 className="invoice-details__status-label">Status</h6>
+            <StatusBadge status={invoice.status} />
           </div>
         </section>
 
@@ -134,25 +141,63 @@ export function InvoiceDetails() {
                     <th>Total</th>
                   </tr>
                 </thead>
+
                 <tbody className="invoice-details__table-body">
                   {invoice.itemList.map((item, index) => (
                     <tr key={index} className="invoice-details__table-row">
-                      <td>{item.itemName}</td>
-                      <td>{item.qty}</td>
-                      <td>£{item.price}</td>
-                      <td>£{item.total}</td>
+                      <td className="item-info">
+                        <div className="item-name">{item.itemName}</div>
+
+                        <div className="item-meta">
+                          <span>{item.qty}</span>
+                          <span>x</span>
+                          <span>£{item.price}</span>
+                        </div>
+                      </td>
+
+                      <td className="item-total">£{item.total}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
 
               <section className="invoice-details__total">
-                <h5 className="invoice-details__total-label">Amount Due</h5>
+                <h5 className="invoice-details__total-label">Grand Total</h5>
                 <p className="invoice-details__total-amount">
                   £{invoice.total}
                 </p>
               </section>
             </div>
+          </div>
+        </section>
+
+        <section className="invoice-details__status-bar__mobile">
+          <div className="invoice-details__actions">
+            {invoice.status !== "paid" && (
+              <EditBtn onClick={() => setShowForm(true)} />
+            )}
+            {showForm && (
+              <InvoiceForm
+                mode="edit"
+                invoice={invoice}
+                onClose={() => setShowForm(false)}
+              />
+            )}
+            <DeleteBtn onClick={() => setShowModal(true)} />
+
+            {showModal && (
+              <DeleteModal
+                invoiceId={invoice.id}
+                onConfirm={() => {
+                  deleteInvoice(invoice.id);
+                  navigate("/");
+                }}
+                onCancel={() => setShowModal(false)}
+              />
+            )}
+            {invoice.status === "pending" && (
+              <MarkAsPaid onClick={() => markAsPaid(invoice.id)} />
+            )}
           </div>
         </section>
       </div>

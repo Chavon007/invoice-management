@@ -79,3 +79,18 @@
 .modal__btn--delete:hover {
   background: var(--color-bg-delete-hover);
 }
+
+/* ===== MOBILE (320px+) ===== */
+@media (max-width: 767px) {
+
+}
+
+/* ===== TABLET (768px+) ===== */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+}
+
+/* ===== DESKTOP (1024px+) ===== */
+@media (min-width: 1024px) {
+
+}

@@ -6,6 +6,7 @@ import { SaveBtn } from "../button/saveSend";
 import { DiscardBtn } from "../button/discard";
 import { useInvoice } from "../../context/invoiceContext";
 import "./invoiceform.css";
+import { useEffect } from "react";
 const initialErrors = {
   name: "",
   receiverEmail: "",
@@ -56,6 +57,13 @@ function InvoiceForm({ mode, invoice, onClose }: InvoiceFormProps) {
     price: 0,
     total: 0,
   });
+
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
 
   const handleAddItem = () => {
     if (!currentItem.itemName || currentItem.qty <= 0 || currentItem.price <= 0)
@@ -190,7 +198,10 @@ function InvoiceForm({ mode, invoice, onClose }: InvoiceFormProps) {
           {mode === "edit" ? `Edit #${invoice?.id}` : "New Invoice"}
         </h2>
 
-        <form className="invoice-form__body" onClick={(e) => e.preventDefault()}>
+        <form
+          className="invoice-form__body"
+          onClick={(e) => e.preventDefault()}
+        >
           {/* Bill From */}
           <section className="invoice-form__section">
             <h4 className="invoice-form__section-title">Bill From</h4>
@@ -501,16 +512,20 @@ function InvoiceForm({ mode, invoice, onClose }: InvoiceFormProps) {
                 {formDetails.itemList.map((item, index) => (
                   <div key={index} className="invoice-form__item-row">
                     <p className="invoice-form__item-name">{item.itemName}</p>
-                    <p className="invoice-form__item-qty">{item.qty}</p>
-                    <p className="invoice-form__item-price">£{item.price}</p>
-                    <p className="invoice-form__item-total">£{item.total}</p>
-                    <button
-                      type="button"
-                      className="invoice-form__item-delete"
-                      onClick={() => handleDeleteItem(index)}
-                    >
-                      🗑
-                    </button>
+
+                    {/* Wrap these in a meta div for mobile layout */}
+                    <div className="invoice-form__item-meta">
+                      <p className="invoice-form__item-qty">{item.qty}</p>
+                      <p className="invoice-form__item-price">£{item.price}</p>
+                      <p className="invoice-form__item-total">£{item.total}</p>
+                      <button
+                        type="button"
+                        className="invoice-form__item-delete"
+                        onClick={() => handleDeleteItem(index)}
+                      >
+                        🗑
+                      </button>
+                    </div>
                   </div>
                 ))}
               </div>

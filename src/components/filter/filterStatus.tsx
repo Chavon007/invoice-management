@@ -19,6 +19,7 @@ export function FilterStatus({ onFilterStatus }: filterStatusProps) {
     <div className="filter">
       <div className="filter__header">
         <h3 className="filter__title">Filter by status</h3>
+        <h3 className="filter__title--mobile">Filter</h3>
         <button className="filter__toggle" onClick={showFilterTable}>
           {showTab ? <RiArrowDropUpLine /> : <RiArrowDropDownLine />}
         </button>

@@ -26,6 +26,9 @@
   text-align: left;
   gap: 8px;
 }
+.invoice-card__button_mobile {
+  display: none;
+}
 
 .invoice-card__id {
   font-family: var(--font-primary);
@@ -62,4 +65,53 @@
   color: #7c5dfa;
   font-size: 11px;
   justify-self: end;
+}
+
+/* ===== MOBILE (320px+) ===== */
+@media (max-width: 767px) {
+  .invoice-card {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    box-shadow: #48549f1a;
+  }
+  .invoice-card__button {
+    display: none;
+  }
+  .invoice-card__button_mobile {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+
+    align-items: center;
+    padding: 16px 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    gap: 8px;
+  }
+  .invoice-card-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .invoice-card-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* ===== TABLET (768px+) ===== */
+@media (min-width: 768px) and (max-width: 1023px) {
+}
+
+/* ===== DESKTOP (1024px+) ===== */
+@media (min-width: 1024px) {
 }

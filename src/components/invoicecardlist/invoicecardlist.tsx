@@ -27,6 +27,23 @@ export function InvoiceCardList({
         <StatusBadge status={status} />
         <MdArrowForwardIos className="invoice-card__arrow" />
       </button>
+
+      <button
+        className="invoice-card__button_mobile"
+        onClick={() => navigate(`/invoice/${id}`)}
+      >
+        <div className="invoice-card-1">
+          <h5 className="invoice-card__id">{id}</h5>
+          <p className="invoice-card__date">{maindate}</p>
+
+          <p className="invoice-card__amount">£{amount}</p>
+        </div>
+        <div className="invoice-card-2">
+          {" "}
+          <p className="invoice-card__name">{name}</p>
+          <StatusBadge status={status} />
+        </div>
+      </button>
     </div>
   );
 }

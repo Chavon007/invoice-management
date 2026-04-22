@@ -7,7 +7,7 @@ import EmptyInvoice from "../components/emptyinvoice/emptyinvoice";
 import { useState } from "react";
 import InvoiceForm from "../components/invoiceForm/invoiceForm";
 import type { filterState } from "../types/type";
-import "../index.css"
+import "../index.css";
 
 export function InvoiceList() {
   const { invoices } = useInvoice();
@@ -35,7 +35,10 @@ export function InvoiceList() {
         <section className="invoice-list__header">
           <div className="invoice-list__title">
             <h2>Invoices</h2>
-            <p>There are {filteredInvoice.length} total invoices</p>
+            <p className="invoice-count invoice-count--desktop">There are {filteredInvoice.length} total invoices</p>
+            <p className="invoice-count invoice-count--mobile">
+              {filteredInvoice.length} invoices
+            </p>
           </div>
           <div className="invoice-list__actions">
             <FilterStatus onFilterStatus={setFilter} />

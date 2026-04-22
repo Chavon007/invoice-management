@@ -163,7 +163,7 @@
   padding: 16px;
 }
 
-/* Item list — 4-column input row */
+/* Item list — 4-column input row (new item inputs) */
 .invoice-form__row-item {
   display: grid;
   grid-template-columns: 214px 46px 100px 100px;
@@ -182,7 +182,7 @@
 /* Existing saved items header */
 .invoice-form__items-header {
   display: grid;
-  grid-template-columns: 214px 46px 100px 100px 18px;
+  grid-template-columns: 214px 214px 18px;
   gap: 16px;
   margin-bottom: 8px;
 }
@@ -195,13 +195,29 @@
   letter-spacing: -0.1px;
 }
 
-/* Saved item row */
-.invoice-form__item-row {
+/* On desktop the header has 5 columns: name | qty | price | total | delete */
+.invoice-form__items-header {
   display: grid;
   grid-template-columns: 214px 46px 100px 100px 18px;
   gap: 16px;
+  margin-bottom: 8px;
+}
+
+/* Saved item row — on desktop: name + meta side by side in 5-col grid */
+.invoice-form__item-row {
+  display: grid;
+  grid-template-columns: 214px 1fr;
+  gap: 16px;
   align-items: center;
   margin-bottom: 16px;
+}
+
+/* meta wrapper holds qty, price, total, delete in a row on both desktop & mobile */
+.invoice-form__item-meta {
+  display: grid;
+  grid-template-columns: 46px 100px 100px 18px;
+  gap: 16px;
+  align-items: center;
 }
 
 .invoice-form__item-name,
@@ -264,4 +280,175 @@
 .invoice-form__actions-right {
   display: flex;
   gap: 8px;
+}
+
+/* ===== MOBILE (up to 767px) ===== */
+@media (max-width: 767px) {
+  /* No dark overlay — nav stays fully visible */
+  .invoice-form__overlay {
+    background: transparent;
+    pointer-events: none;
+  }
+
+  /* Form sits below the nav, scrolls independently */
+  .invoice-form {
+    pointer-events: all;
+    left: 0;
+    top: 72px;
+    width: 100%;
+    height: calc(100vh - 72px);
+    padding: 32px 24px 32px 24px;
+    border-radius: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .invoice-form__title {
+    font-size: 20px;
+  }
+
+  .invoice-form__body {
+    width: 100%;
+    margin-top: 24px;
+    gap: 24px;
+  }
+
+  .invoice-form__section {
+    width: 100%;
+  }
+
+  /* City + Post Code side by side, Country full width below */
+  .invoice-form__row {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .invoice-form__row .invoice-form__label:last-child {
+    grid-column: 1 / -1;
+  }
+
+  /* Invoice Date + Payment Terms stay side by side */
+  .invoice-form__row--two {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* Item list header hidden on mobile */
+  .invoice-form__items-header {
+    display: none;
+  }
+
+  /* Each saved item: name full width on top, meta row below */
+  .invoice-form__item-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  /* Qty, Price, Total, Delete all in one flex row */
+  .invoice-form__item-meta {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .invoice-form__item-meta .invoice-form__item-qty,
+  .invoice-form__item-meta .invoice-form__item-price,
+  .invoice-form__item-meta .invoice-form__item-total {
+    margin: 0;
+    padding: 0;
+  }
+
+  .invoice-form__item-qty {
+    flex: 0 0 40px;
+  }
+
+  .invoice-form__item-price {
+    flex: 1;
+  }
+
+  .invoice-form__item-total {
+    flex: 1;
+    color: #888eb0;
+  }
+
+  .invoice-form__item-delete {
+    flex: 0 0 18px;
+    margin-left: auto;
+  }
+
+  /* New item inputs: name full width, qty/price/total in a row below */
+  .invoice-form__row-item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .invoice-form__row-item--sub {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* Buttons sit naturally at bottom of form — NOT fixed */
+  .invoice-form__actions {
+    position: static;
+    padding: 16px 0 32px 0;
+    background: transparent;
+    box-shadow: none;
+    width: 100%;
+  }
+}
+
+/* ===== TABLET (768px – 1023px) ===== */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .invoice-form {
+    left: 0;
+    top: 0;
+    width: 616px;
+    height: 100vh;
+    padding: 48px 40px 32px 40px;
+    border-radius: 0 20px 20px 0;
+  }
+
+  .invoice-form__body {
+    width: 100%;
+  }
+
+  .invoice-form__section {
+    width: 100%;
+  }
+
+  .invoice-form__row {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .invoice-form__row .invoice-form__label:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .invoice-form__items-header {
+    grid-template-columns: 1fr 46px 100px 100px 18px;
+  }
+
+  .invoice-form__item-row {
+    grid-template-columns: 1fr auto;
+  }
+
+  .invoice-form__item-meta {
+    grid-template-columns: 46px 100px 100px 18px;
+  }
+
+  .invoice-form__row-item {
+    grid-template-columns: 1fr 60px 100px 100px;
+  }
+}
+
+/* ===== DESKTOP (1024px+) ===== */
+@media (min-width: 1024px) {
+  /* Desktop defaults already set above */
 }
